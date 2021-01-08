@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Gallery";
+}
+@{
+    Layout = "_Layout";
+}
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/js/site.js" />
+
+@using Gallery.Models;
+@model List<Group>;
+
+<div>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <td>
+                    ID
+                </td>
+                <td>
+                    Name
+                </td>
+                <td>
+                    Information
+                </td>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var el in Model)
+            {
+                <tr>
+                    <td>
+                        @el.Gid
+                    </td>
+                    <td>
+                        @el.Gname
+                    </td>
+                    <td>
+                        @el.Ginfo
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" type="submit" onclick="Edit(@el.Gid)">Edit</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" type="submit" onclick="Delete(@el.Gid)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div id="formForArtWork">
+    <form>
+        <div class="form-group">
+            <label>ID</label>
+            <input type="text" class="form-control" id="inputID">
+        </div>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" id="inputName">
+        </div>
+        <div class="form-group">
+            <label>Info</label>
+            <input type="text" class="form-control" id="inputInfo">
+        </div>
+        <button class="btn btn-primary" onclick="AddGroup()">Add Group</button>
+    </form>
+</div>
+<script>
+    function Edit(id) {
+        var url = '@Url.Action("EditGroup", "Home", new { id = "ID" })';
+        url = url.replace("ID", id);
+        window.location.href = url;
+    }
+    function Delete(id) {
+        $.ajax({
+            type: 'POST',
+            url: '/Home/DeleteGroup',
+            data: { id: id },
+            success: function (result) {
+                console.log("Başarılı")
+            },
+            error: function (ex) {
+                console.log("İşlem Başarısız")
+            }
+        });
+    }
+</script>
