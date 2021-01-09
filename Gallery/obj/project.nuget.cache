@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4AX+15n4UHOEO9zIurs4ZtOKa8ntE334P0dh0qaKqoJ0a93Hlun8ICDwd8Kp8b7CNEV4gZ1L/O0i5fQ7CkgIAg==",
+  "dgSpecHash": "LZf5xGMBTBe9wHt1wBpQQX6JRY7K+KqNND9SLZppD3qreoTIbyBLxQHnhDGjCT9yCQP2PAPNtfYKbqDGxkK5fg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ACER\\Desktop\\Gallery V2\\.netCoreGalleryWebApp\\Gallery\\Gallery.csproj",
+  "projectFilePath": "C:\\Users\\ACER\\Desktop\\.netCoreGalleryWebApp\\Gallery\\Gallery.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACER\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

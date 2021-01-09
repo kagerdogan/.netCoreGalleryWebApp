@@ -88,3 +88,19 @@ C:\Users\ACER\Desktop\Gallery v3\.netCoreGalleryWebApp\GalleryBusiness\obj\Debug
 C:\Users\ACER\Desktop\Gallery V2\.netCoreGalleryWebApp\GalleryBusiness\bin\Debug\netcoreapp3.1\GalleryBusiness.runtimeconfig.json
 C:\Users\ACER\Desktop\Gallery V2\.netCoreGalleryWebApp\GalleryBusiness\bin\Debug\netcoreapp3.1\GalleryBusiness.runtimeconfig.dev.json
 C:\Users\ACER\Desktop\Gallery V2\.netCoreGalleryWebApp\GalleryBusiness\obj\Debug\netcoreapp3.1\GalleryBusiness.genruntimeconfig.cache
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\bin\Debug\netcoreapp3.1\Gallery.exe
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\bin\Debug\netcoreapp3.1\GalleryBusiness.deps.json
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\bin\Debug\netcoreapp3.1\GalleryBusiness.runtimeconfig.json
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\bin\Debug\netcoreapp3.1\GalleryBusiness.runtimeconfig.dev.json
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\bin\Debug\netcoreapp3.1\GalleryBusiness.dll
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\bin\Debug\netcoreapp3.1\GalleryBusiness.pdb
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\bin\Debug\netcoreapp3.1\Gallery.dll
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\bin\Debug\netcoreapp3.1\Gallery.pdb
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\obj\Debug\netcoreapp3.1\GalleryBusiness.csprojAssemblyReference.cache
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\obj\Debug\netcoreapp3.1\GalleryBusiness.AssemblyInfoInputs.cache
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\obj\Debug\netcoreapp3.1\GalleryBusiness.AssemblyInfo.cs
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\obj\Debug\netcoreapp3.1\GalleryBusiness.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\obj\Debug\netcoreapp3.1\GalleryBusiness.csproj.CopyComplete
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\obj\Debug\netcoreapp3.1\GalleryBusiness.dll
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\obj\Debug\netcoreapp3.1\GalleryBusiness.pdb
+C:\Users\ACER\Desktop\.netCoreGalleryWebApp\GalleryBusiness\obj\Debug\netcoreapp3.1\GalleryBusiness.genruntimeconfig.cache

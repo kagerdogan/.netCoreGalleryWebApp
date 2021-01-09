@@ -39,7 +39,9 @@ namespace GalleryFront.Controllers
             _artist.AddArtist(artist);
         }
         public IActionResult GroupList()
-        {   
+        {
+            ViewBag.artworkobj = _artwork.ArtworkNameView();
+
             return View(_group.ListOfGroup());
         }
         public IActionResult GetallArtist()

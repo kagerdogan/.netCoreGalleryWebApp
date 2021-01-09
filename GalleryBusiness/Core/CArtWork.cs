@@ -14,23 +14,6 @@ namespace GalleryBusiness.Core
        
         public IEnumerable<ArtworkWithArtistName> ListOfArtWork()
         {
-
-            //var artname = (from art in gc.ArtWorks
-            //             join awitha in gc.Artists
-            //             on art.Aid equals awitha.Aid
-            //              select new ArtworkWithArtistName
-            //              {
-            //                  Awid = art.Awid,
-            //                  Awdate = (DateTime)art.Awdate,
-            //                 Awinformation = art.Awinformation,
-            //                  Awname = art.Awname,
-            //                 Awtype = art.Awtype,
-            //                  Awvalue = art.Awvalue,
-            //                  Aname = awitha.Aname
-
-            //              }
-            //              ).ToList();
-            //return artname;
             var artname = (from art in gc.ArtWorks
                            join awitha in gc.Artists
                            on art.Aid equals awitha.Aid
@@ -98,6 +81,11 @@ namespace GalleryBusiness.Core
             gc.ArtWorks.Remove(deleted);
             gc.SaveChanges();
             return true;
+        }
+        public List<ArtWork> ArtworkNameView()
+        {
+           var  lartist = gc.ArtWorks.Select(a => a).ToList();
+            return lartist;
         }
     }
 }

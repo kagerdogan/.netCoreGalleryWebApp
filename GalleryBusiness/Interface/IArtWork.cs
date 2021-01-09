@@ -12,5 +12,6 @@ namespace GalleryBusiness.Interface
         public ArtWork FindArtWorkByID(int id);
         public bool SetArtWork(ArtWork eartwork);
         public bool DeleteArtWork(int id);
+        public List<ArtWork> ArtworkNameView();
     }
 }

@@ -4,6 +4,7 @@ using System.Text;
 using Gallery.Models;
 using System.Linq;
 using GalleryBusiness.Interface;
+using Gallery.ViewModels;
 
 namespace GalleryBusiness.Core
 {
@@ -32,10 +33,25 @@ namespace GalleryBusiness.Core
             return group;
         }
 
-        public IEnumerable<Group> ListOfGroup()
+        public IEnumerable<GroupListViewModel> ListOfGroup()
         {
-            var grplist = gc.Groups.Select(c => c).ToList();
-            return grplist;
+            // Group join kullanımında kaldık group list bastırma noktasında
+            var glist = gc.Groups.Select(c => c).ToList();
+            var alist = gc.GroupArtists.Select(c => c).ToList();
+            var awlist = gc.GroupArtworks.Select(c => c).ToList();
+            var groupjoin = glist.GroupJoin(alist,
+                a=>a.Gid,
+                g=>g.Gid,
+                (a,agroup)=>new GroupListViewModel
+                {
+                    Gid=a.Gid,
+                    Gname=a.Gname,
+                    Ginfo=a.Ginfo,
+                }
+                
+                )
+            
+            return glist;
         }
 
         public bool SetGroup(Group egroup)
@@ -49,5 +65,6 @@ namespace GalleryBusiness.Core
             gc.SaveChanges();
             return true;
         }
+
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8SXlVCQ/dOGq6JwMgP+S9QsJuDexbbb7o8voR3sRuPd1XXVKUF5A6zS2r7YcTCWy21IFruCh2GNEPW49sXt9Wg==",
+  "dgSpecHash": "LYJ4uVKExy45IqzOHD07TZsFatkslIXyXXIM0RG4bQh1IfVN6Ci6CwgZJyLCaKxwM44O7/63Y2BdVrKsxNiEQQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ACER\\Desktop\\Gallery V2\\.netCoreGalleryWebApp\\GalleryFront\\GalleryFront.csproj",
+  "projectFilePath": "C:\\Users\\ACER\\Desktop\\.netCoreGalleryWebApp\\GalleryFront\\GalleryFront.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACER\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
