@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace GalleryFront.Controllers
 {
-    
+    [Authorize(Roles ="admin")]
     public class HomeController : Controller
     {
         private readonly IArtist _artist;
@@ -27,14 +27,10 @@ namespace GalleryFront.Controllers
             _group = group;
             _userlogin = userlogin;
         }
-
-        [Authorize]
         public IActionResult Index()
         {
-          
             return View();
         }
-
         [HttpPost]
         public void SubmitForm(Artist artist)
         {
@@ -119,19 +115,7 @@ namespace GalleryFront.Controllers
         {
             return View(_group.FindGroupById(id));
         }
-        public IActionResult Login()
-        {
-            return View();
-        }
-        public IActionResult Register()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult Register(UserLoginModel userLoginModel)
-        {
-            _userlogin.Register(userLoginModel);
-            return RedirectToAction("Login");
-        }
+
     }
+ 
 }

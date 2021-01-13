@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 namespace GalleryFront
 {
@@ -32,12 +33,22 @@ namespace GalleryFront
             services.AddScoped<IGroup, CGroup>();
             services.AddScoped<IUserLogin, CUserLogin>();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(x =>
+                .AddCookie(options =>
                 {
-                    x.LoginPath = "/Home/Login";
+                    options.Cookie.Path = "/";
+                    options.Cookie.Name = "GalleryCookie";
+                    options.Cookie.Domain = Configuration["localhost"];
+                    options.Events = new CookieAuthenticationEvents
+                    {
+                        OnRedirectToLogin = c => OnRedirectToLogin(c, Configuration),
+                    };
+
+                    //options.LoginPath = "/Home/Login";
 
                 });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,15 +68,20 @@ namespace GalleryFront
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Login}/{action=Login}/{id?}");
             });
+        }
+        private static Task OnRedirectToLogin(RedirectContext<CookieAuthenticationOptions> context, IConfiguration configuration)
+        {
+            context.HttpContext.Response.Redirect(configuration + "Login/Login");
+            return Task.CompletedTask;
         }
     }
 }

@@ -3453,7 +3453,6 @@ C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netc
 C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\Razor\Views\Home\GroupList.cshtml.g.cs
 C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\Razor\Views\Home\ListOfArtWorks.cshtml.g.cs
-C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
 C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
@@ -3463,4 +3462,5 @@ C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netc
 C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\GalleryFront.Views.pdb
 C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\GalleryFront.csproj.CopyComplete
 C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\GalleryFront.genruntimeconfig.cache
-C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\Razor\Views\Home\Register.cshtml.g.cs
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\Razor\Views\Login\Login.cshtml.g.cs
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\Razor\Views\Login\Register.cshtml.g.cs
