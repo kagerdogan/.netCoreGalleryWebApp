@@ -40,18 +40,18 @@ namespace GalleryBusiness.Core
             var alist = gc.GroupArtists.Select(c => c).ToList();
             var awlist = gc.GroupArtworks.Select(c => c).ToList();
             var groupjoin = glist.GroupJoin(alist,
-                a=>a.Gid,
-                g=>g.Gid,
-                (a,agroup)=>new GroupListViewModel
+                a => a.Gid,
+                g => g.Gid,
+                (a, agroup) => new GroupListViewModel
                 {
-                    Gid=a.Gid,
-                    Gname=a.Gname,
-                    Ginfo=a.Ginfo,
+                    Gid = a.Gid,
+                    Gname = a.Gname,
+                    Ginfo = a.Ginfo,
                 }
-                
-                )
+
+                );
             
-            return glist;
+            return (IEnumerable<GroupListViewModel>)glist;
         }
 
         public bool SetGroup(Group egroup)

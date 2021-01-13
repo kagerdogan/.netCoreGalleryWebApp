@@ -31,7 +31,7 @@ namespace Gallery.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=Gallery;Integrated Security=True;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=.\\LOCAL;Database=Gallery;Integrated Security=True;Trusted_Connection=True;");
             }
         }
 
@@ -226,15 +226,23 @@ namespace Gallery.Models
                 entity.HasIndex(e => e.Username, "IX_UserLogin")
                     .IsUnique();
 
-                entity.Property(e => e.LoginId).HasColumnName("LoginID");
+                entity.Property(e => e.LoginId)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("LoginID");
 
                 entity.Property(e => e.Password)
                     .IsRequired()
-                    .HasMaxLength(50);
+                    .HasMaxLength(500);
 
                 entity.Property(e => e.Username)
                     .IsRequired()
                     .HasMaxLength(50);
+
+                entity.HasOne(d => d.Login)
+                    .WithOne(p => p.UserLogin)
+                    .HasForeignKey<UserLogin>(d => d.LoginId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_UserLogin_UserInformation");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ACER\\Desktop\\.netCoreGalleryWebApp\\Gallery\\Gallery.csproj": {}
+    "C:\\Users\\fatih\\Desktop\\Gallery\\.netCoreGalleryWebApp\\Gallery\\Gallery.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ACER\\Desktop\\.netCoreGalleryWebApp\\Gallery\\Gallery.csproj": {
+    "C:\\Users\\fatih\\Desktop\\Gallery\\.netCoreGalleryWebApp\\Gallery\\Gallery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ACER\\Desktop\\.netCoreGalleryWebApp\\Gallery\\Gallery.csproj",
+        "projectUniqueName": "C:\\Users\\fatih\\Desktop\\Gallery\\.netCoreGalleryWebApp\\Gallery\\Gallery.csproj",
         "projectName": "Gallery",
-        "projectPath": "C:\\Users\\ACER\\Desktop\\.netCoreGalleryWebApp\\Gallery\\Gallery.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ACER\\Desktop\\.netCoreGalleryWebApp\\Gallery\\obj\\",
+        "projectPath": "C:\\Users\\fatih\\Desktop\\Gallery\\.netCoreGalleryWebApp\\Gallery\\Gallery.csproj",
+        "packagesPath": "C:\\Users\\fatih\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fatih\\Desktop\\Gallery\\.netCoreGalleryWebApp\\Gallery\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fatih\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -70,16 +67,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.10, 3.1.10]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.1.10, 3.1.10]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

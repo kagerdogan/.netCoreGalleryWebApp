@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using Gallery.Models;
+using Gallery.ViewModels;
 
 namespace GalleryBusiness.Interface
 {
     public interface IUserLogin
     {
-        public bool Register(UserLogin userlogin);
+        public bool Register(UserLoginModel userloginModel);
     }
 }

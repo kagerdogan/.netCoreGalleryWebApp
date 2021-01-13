@@ -13,5 +13,6 @@ namespace Gallery.Models
         public int? Uage { get; set; }
         public string Umail { get; set; }
         public string Uprofession { get; set; }
+        public virtual UserLogin UserLogin { get; set; }
     }
 }

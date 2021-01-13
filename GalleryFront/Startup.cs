@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace GalleryFront
 {
@@ -29,7 +30,14 @@ namespace GalleryFront
             services.AddScoped<IArtist, CArtist>();
             services.AddScoped<IArtWork, CArtWork>();
             services.AddScoped<IGroup, CGroup>();
+            services.AddScoped<IUserLogin, CUserLogin>();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(x =>
+                {
+                    x.LoginPath = "/Home/Login";
+
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

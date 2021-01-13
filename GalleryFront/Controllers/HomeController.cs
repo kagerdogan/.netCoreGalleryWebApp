@@ -1,6 +1,7 @@
 ﻿using Gallery.Models;
 using Gallery.ViewModels;
 using GalleryBusiness.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -17,16 +18,17 @@ namespace GalleryFront.Controllers
         private readonly IArtist _artist;
         private readonly IArtWork _artwork;
         private readonly IGroup _group;
-        //private readonly IUserLogin _userlogin;
+        private readonly IUserLogin _userlogin;
 
-        public HomeController(IArtist artist,IArtWork artwork,IGroup group )
+        public HomeController(IArtist artist,IArtWork artwork,IGroup group,IUserLogin userlogin)
         {
             _artist = artist;
             _artwork = artwork;
             _group = group;
-          //  _userlogin = userlogin;
+            _userlogin = userlogin;
         }
 
+        [Authorize]
         public IActionResult Index()
         {
           
@@ -74,10 +76,7 @@ namespace GalleryFront.Controllers
             _artwork.AddArtWork(artwork);
         }
 
-        public IActionResult Login()
-        {
-            return View();
-        }
+
         [HttpPost]
         public IActionResult DeleteArtWork(int id)
         {
@@ -119,6 +118,20 @@ namespace GalleryFront.Controllers
         public IActionResult EditGroup(int id)
         {
             return View(_group.FindGroupById(id));
+        }
+        public IActionResult Login()
+        {
+            return View();
+        }
+        public IActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Register(UserLoginModel userLoginModel)
+        {
+            _userlogin.Register(userLoginModel);
+            return RedirectToAction("Login");
         }
     }
 }

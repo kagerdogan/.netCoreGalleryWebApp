@@ -4,21 +4,26 @@
 @{
     Layout = "_Layout";
 }
-<div>
+
+
     <head>
         <title>Login Form</title>
         <link rel="stylesheet" href="~/css/Login.css">
     </head>
     <body>
 
-        <form class="box" action="index.html" method="post">
+        <form class="box" action="index.html" method="post" style="overflow:hidden" >
             <h1>Login</h1>
             <input type="text" name="" placeholder="Username">
             <input type="password" name="" placeholder="Password">
-            <input type="submit" name="" value="Login">
+            @*<input type="submit" name="" value="Login">*@
+            <button class="btn btn-primary" type="submit" onclick="" asp-controller="Home" asp-action="Login">Login</button>
+
+            <a class="btn btn-primary" asp-controller="Home" asp-action="Register">Register</a>
         </form>
+
 
 
     </body>
 
-</div>
+

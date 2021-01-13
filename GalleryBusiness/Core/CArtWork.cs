@@ -39,6 +39,7 @@ namespace GalleryBusiness.Core
         }
 
 
+
         public ArtWork FindArtWorkByID(int id)
         {
             var artwork =( from artw in gc.ArtWorks
@@ -54,7 +55,6 @@ namespace GalleryBusiness.Core
                 Awvalue = artw.Awvalue,
                 Awid = artw.Awid,
                 Aid = awitha.Aid
-                        
             }).FirstOrDefault();
             return artwork;
     }
