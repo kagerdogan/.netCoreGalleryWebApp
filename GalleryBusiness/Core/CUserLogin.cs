@@ -47,13 +47,11 @@ namespace GalleryBusiness.Core
                     {
                         return true;
                     }
-
                     return false;
                 }
             }
             return false;
         }
-
         public bool isAdmin(string userName)
         {
             var isAdmin = (from uInfo in gc.UserInformations
@@ -65,6 +63,38 @@ namespace GalleryBusiness.Core
             if (isAdmin == "admin")
                 return true;
             return false;
+        }
+
+        public ProfilViewModel GetProfileInfo(string username)
+        {
+            var profile = (from uLogin in gc.UserLogins
+                           join UInfo in gc.UserInformations
+                           on uLogin.LoginId equals UInfo.Uid
+                           where uLogin.Username == username
+                           select new ProfilViewModel
+                           {
+                               UName = uLogin.Username,
+                               Name = UInfo.Uname,
+                               Password = uLogin.Password,
+                               Uage = UInfo.Uage,
+                               Umail = UInfo.Umail,
+                               Uprofession = UInfo.Uprofession,
+                               Urole = UInfo.Urole
+                           }
+                         ).FirstOrDefault();
+            return profile;
+        }
+
+        public ProfilViewModel EditProfile(ProfilViewModel profilViewModel)
+        {
+            var updated = gc.UserLogins.Where(i => i.Username == profilViewModel.UName).Select(c => c).FirstOrDefault();
+
+           
+
+
+
+
+
         }
     }
 

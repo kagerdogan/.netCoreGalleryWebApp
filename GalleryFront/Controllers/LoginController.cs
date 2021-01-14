@@ -35,7 +35,8 @@ namespace GalleryFront.Controllers
                 var ownPrincipal = new ClaimsPrincipal(ownIdentity);
                 var ownSchema = CookieAuthenticationDefaults.AuthenticationScheme;
                 await HttpContext.SignInAsync(ownSchema, ownPrincipal);
-                return RedirectToAction("Index", "Home");              
+                TempData["Username"] = Ulogin.Username;
+                return RedirectToAction("Index", "Home");
             }
             else
                 return View();

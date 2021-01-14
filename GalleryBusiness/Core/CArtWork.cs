@@ -73,7 +73,6 @@ namespace GalleryBusiness.Core
             gc.SaveChanges();
             return true;
         }
-
         public bool DeleteArtWork(int id)
         {
             var deleted = gc.ArtWorks.Where(c => c.Awid == id)

@@ -19,7 +19,8 @@ namespace GalleryFront.Controllers
         private readonly IArtWork _artwork;
         private readonly IGroup _group;
         private readonly IUserLogin _userlogin;
-
+      
+        
         public HomeController(IArtist artist,IArtWork artwork,IGroup group,IUserLogin userlogin)
         {
             _artist = artist;
@@ -29,7 +30,8 @@ namespace GalleryFront.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            string userName = TempData["Username"] as string;
+            return View(_userlogin.GetProfileInfo(userName));
         }
         [HttpPost]
         public void SubmitForm(Artist artist)
@@ -110,12 +112,11 @@ namespace GalleryFront.Controllers
             _group.SetGroup(egroup);
             return RedirectToAction("GroupList");
         }
-        
         public IActionResult EditGroup(int id)
         {
             return View(_group.FindGroupById(id));
         }
+        
 
     }
- 
 }
