@@ -1,4 +1,6 @@
-﻿
+﻿@*{
+        string Name = Context.Session.GetString("Name");
+    }*@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -9,6 +11,11 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
+
+
+     
+
+
     <section></section>
 </body>
 </html>
@@ -37,3 +44,12 @@
         <button class="btn btn-primary" onclick="myFunction()">Add Artist</button>
     </form>
 </div>
+
+<script>
+         function FindProfile(Username) {
+        var url = '@Url.Action("EditProfile", "Home",new { username = "Username"})';
+         url = url.replace("Username", Username);
+        window.location.href = url;
+    }
+
+</script>

@@ -27,6 +27,9 @@ namespace GalleryFront
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession();
+            services.AddMemoryCache();
+           // services.AddDistributedMemoryCache(); 
             services.AddControllersWithViews();
             services.AddScoped<IArtist, CArtist>();
             services.AddScoped<IArtWork, CArtWork>();
@@ -68,6 +71,7 @@ namespace GalleryFront
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
             app.UseAuthentication();
             app.UseAuthorization();
 

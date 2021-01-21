@@ -510,3 +510,16 @@ C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\obj\Debug\netcoreap
 C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\obj\Debug\netcoreapp3.1\Gallery.dll
 C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\obj\Debug\netcoreapp3.1\Gallery.pdb
 C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\obj\Debug\netcoreapp3.1\Gallery.genruntimeconfig.cache
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.DataProtection.dll
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Session.dll
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Xml.dll
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\Gallery\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll

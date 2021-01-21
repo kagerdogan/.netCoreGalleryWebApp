@@ -50,7 +50,7 @@ namespace GalleryBusiness.Core
                 }
 
                 );
-            
+
             return (IEnumerable<GroupListViewModel>)glist;
         }
 

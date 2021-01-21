@@ -2,6 +2,7 @@
 using Gallery.ViewModels;
 using GalleryBusiness.Interface;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,16 +13,16 @@ using System.Threading.Tasks;
 
 namespace GalleryFront.Controllers
 {
-    [Authorize(Roles ="admin")]
+    [Authorize(Roles = "admin")]
     public class HomeController : Controller
     {
         private readonly IArtist _artist;
         private readonly IArtWork _artwork;
         private readonly IGroup _group;
         private readonly IUserLogin _userlogin;
-      
-        
-        public HomeController(IArtist artist,IArtWork artwork,IGroup group,IUserLogin userlogin)
+
+
+        public HomeController(IArtist artist, IArtWork artwork, IGroup group, IUserLogin userlogin)
         {
             _artist = artist;
             _artwork = artwork;
@@ -30,9 +31,15 @@ namespace GalleryFront.Controllers
         }
         public IActionResult Index()
         {
+            TempData["Username"] = HttpContext.Session.GetString("currentUser");
             string userName = TempData["Username"] as string;
-            return View(_userlogin.GetProfileInfo(userName));
+            return View();
         }
+        /*   [HttpPost]
+           public IActionResult Index()
+           {
+
+           }*/
         [HttpPost]
         public void SubmitForm(Artist artist)
         {
@@ -48,11 +55,11 @@ namespace GalleryFront.Controllers
         {
             return View(_artist.GetAllArtists());
         }
-       public IActionResult ListOfArtWorks()
+        public IActionResult ListOfArtWorks()
         {
             return View(_artwork.ListOfArtWork());
         }
-       public IActionResult Edit(int id)
+        public IActionResult Edit(int id)
         {
             ViewBag.artistobj = _artist.ArtistNameView();
             return View(_artwork.FindArtWorkByID(id));
@@ -116,7 +123,18 @@ namespace GalleryFront.Controllers
         {
             return View(_group.FindGroupById(id));
         }
-        
+        [HttpPost]
+        public IActionResult EditProfile(string username)
+        {
+            return View(_userlogin.GetProfileInfo(username));
+        }
+        [HttpPost]
+          public IActionResult EditPro(ProfilViewModel profilViewModel)
+          {
+              _userlogin.SetProfile(profilViewModel);
+            return RedirectToAction("Index");
+          }
+
 
     }
 }

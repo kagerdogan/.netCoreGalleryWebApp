@@ -1,6 +1,4 @@
 ﻿
-@using Gallery.ViewModels;
-@model ProfilViewModel;
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +14,24 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Gallery APP</a>
-                <a class="badge badge-primary mx-auto"  asp-controller="Home" asp-action="ProfileEdit" >@Model.Name</a>
+                <div>
+                    @using (Html.BeginForm("EditProfile", "Home"))
+                    {
+                        <label>@TempData["Username"]</label>
+                        <input type="hidden" value="@TempData["Username"]" name="username" readonly/>
+                        <input type="submit" value="@TempData["Username"]" />
+                    }
+                </div>
+                @*
+
+                                        <div >
+            @using (Html.BeginForm("EditProfile","Home"))
+            {
+                <input type="text" value="@TempData["Username"]" name="username"/>
+                <input type="submit" value="@TempData["Username"]"/>
+            }
+        </div>*@
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"> </span>

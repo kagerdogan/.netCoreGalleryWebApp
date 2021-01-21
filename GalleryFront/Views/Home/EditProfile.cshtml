@@ -1,0 +1,25 @@
+﻿@*
+
+*@
+@{
+    ViewData["Title"] = "Gallery";
+    Layout = "_Layout";
+}
+@using Gallery.ViewModels;
+@model ProfilViewModel;
+
+
+<form class="box" method="post" asp-action="EditPro">
+    <h1>Edit Profile</h1>
+    <input id="UserName" type="text" name="Uname" placeholder="Username" value="@Model.UName">
+    <input id="Name" type="text" name="Name" placeholder="Name" value="@Model.Name">
+    <input id="Password" type="password" name="password" placeholder="Password" value="@Model.Password">
+    <input id="Age" type="text" name="Uage" placeholder="Age" value="@Model.Uage">
+    <input id="Mail" type="text" name="Umail" placeholder="E-Mail" value="@Model.Umail">
+    <input id="Profession" type="text" name="Uprofession" placeholder="Profession" value="@Model.Uprofession">
+    <input id="Role" type="text" name="Urole" placeholder="Role" value="@Model.Urole" readonly>
+
+
+    @*<input type="submit" name="" value="Login">*@
+    <button class="btn btn-primary" type="submit">UPDATE</button>
+</form>

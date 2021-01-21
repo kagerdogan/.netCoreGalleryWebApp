@@ -13,9 +13,6 @@ namespace GalleryBusiness.Core
     public class CUserLogin : IUserLogin
     {
         private GalleryContext gc = new GalleryContext();
-
-
-
         public bool Register(UserLoginModel userloginmodel)
         {
             UserLogin ulogin = new UserLogin()
@@ -84,17 +81,29 @@ namespace GalleryBusiness.Core
                          ).FirstOrDefault();
             return profile;
         }
-
-        public ProfilViewModel EditProfile(ProfilViewModel profilViewModel)
+     /*   public ProfilViewModel Test(string username,string password)
         {
-            var updated = gc.UserLogins.Where(i => i.Username == profilViewModel.UName).Select(c => c).FirstOrDefault();
+            var profile = (from uLogin in gc.UserLogins
+                           join UInfo in gc.UserInformations
+                           on uLogin.LoginId equals UInfo.Uid
+                           where uLogin.Username == username select new)//sorgu yazılacak
+            return profile;
+        }*/
 
-           
-
-
-
-
-
+        public bool SetProfile(ProfilViewModel profilViewModel)
+        {
+            var updatedULogin = gc.UserLogins.Where(i => i.Username == profilViewModel.UName).Select(c => c).FirstOrDefault();
+            updatedULogin.Password = profilViewModel.Password;
+            updatedULogin.Username = profilViewModel.UName;
+            var UpdatedUInfo = gc.UserInformations.Where(i => i.Uid == updatedULogin.LoginId).Select(c => c).FirstOrDefault();
+            UpdatedUInfo.Uage = profilViewModel.Uage;
+            UpdatedUInfo.Umail= profilViewModel.Umail;
+            UpdatedUInfo.Uname= profilViewModel.Name;
+            UpdatedUInfo.Uprofession= profilViewModel.Uprofession;
+            UpdatedUInfo.UserLogin = updatedULogin;
+            gc.UserInformations.Update(UpdatedUInfo);
+            gc.SaveChanges();
+            return true;
         }
     }
 

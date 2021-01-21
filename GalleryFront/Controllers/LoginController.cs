@@ -3,12 +3,14 @@ using Gallery.ViewModels;
 using GalleryBusiness.Interface;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+
 
 namespace GalleryFront.Controllers
 {
@@ -35,7 +37,7 @@ namespace GalleryFront.Controllers
                 var ownPrincipal = new ClaimsPrincipal(ownIdentity);
                 var ownSchema = CookieAuthenticationDefaults.AuthenticationScheme;
                 await HttpContext.SignInAsync(ownSchema, ownPrincipal);
-                TempData["Username"] = Ulogin.Username;
+                HttpContext.Session.SetString("currentUser", Ulogin.Username);
                 return RedirectToAction("Index", "Home");
             }
             else

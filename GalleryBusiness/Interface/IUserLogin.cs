@@ -12,6 +12,7 @@ namespace GalleryBusiness.Interface
         public bool CheckPass(LoginModel Loginmodel);
         public bool isAdmin(string userName);
         public ProfilViewModel GetProfileInfo(string username);
-        public ProfilViewModel EditProfile(ProfilViewModel profilViewModel);
+        // public ProfilViewModel EditProfile(ProfilViewModel profilViewModel);
+        public bool SetProfile(ProfilViewModel profilViewModel);
     }
 }
