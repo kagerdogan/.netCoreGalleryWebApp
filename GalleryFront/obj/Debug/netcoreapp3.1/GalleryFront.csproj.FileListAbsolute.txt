@@ -3465,3 +3465,4 @@ C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netc
 C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\Razor\Views\Login\Login.cshtml.g.cs
 C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\Razor\Views\Login\Register.cshtml.g.cs
 C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\Razor\Views\Home\EditProfile.cshtml.g.cs
+C:\Users\fatih\Desktop\Gallery\.netCoreGalleryWebApp\GalleryFront\obj\Debug\netcoreapp3.1\Razor\Views\Home\ChangePassword.cshtml.g.cs

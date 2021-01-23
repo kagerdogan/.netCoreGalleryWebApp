@@ -14,5 +14,6 @@ namespace GalleryBusiness.Interface
         public ProfilViewModel GetProfileInfo(string username);
         // public ProfilViewModel EditProfile(ProfilViewModel profilViewModel);
         public bool SetProfile(ProfilViewModel profilViewModel);
+        public bool updatePassword(string username,string newPassword);
     }
 }
