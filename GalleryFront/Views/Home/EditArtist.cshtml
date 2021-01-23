@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="~/css/site.css" />
 <link rel="stylesheet" href="~/js/site.js" />
 <div id="EditFormArtist">
-    <form asp-action="EditArtist" method="post">
+    <form asp-action="EditArtist" >
         <div class="form-group">
             <label>ID</label>
             <input asp-for="Aid" type="text" class="form-control" id="inputId" placeholder=@Model.Aid>
@@ -35,6 +35,6 @@
             <label>Info</label>
             <input asp-for="Ainformation" type="text" class="form-control" id="inputInfo" placeholder=@Model.Ainformation>
         </div>
-        <button class="btn btn-primary" type="submit">Update</button>
+        <button class="btn btn-primary" >Update</button>
     </form>
 </div>

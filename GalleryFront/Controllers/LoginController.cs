@@ -1,5 +1,6 @@
 ﻿using Gallery.Models;
 using Gallery.ViewModels;
+using GalleryBusiness.Encrypt;
 using GalleryBusiness.Interface;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -23,6 +24,9 @@ namespace GalleryFront.Controllers
         }
         public IActionResult Login()
         {
+            var loggedInUser = HttpContext.User;
+            var loggedInUserName = loggedInUser.Identity.Name;
+            ViewBag.username = loggedInUserName;
             return View();
         }
         [HttpPost]
@@ -33,6 +37,7 @@ namespace GalleryFront.Controllers
                 var ownRole = new List<Claim>();
                 ownRole.Add(new Claim(ClaimTypes.Role, "admin"));//databaseden gelen nesnenın
                 ownRole.Add(new Claim(ClaimTypes.Name, Ulogin.Username));
+                ownRole.Add(new Claim(ClaimTypes.Hash, Sha256.ComputeSha256Hash(Ulogin.Password)));
                 var ownIdentity = new ClaimsIdentity(ownRole, CookieAuthenticationDefaults.AuthenticationScheme);
                 var ownPrincipal = new ClaimsPrincipal(ownIdentity);
                 var ownSchema = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -52,6 +57,20 @@ namespace GalleryFront.Controllers
         public IActionResult Register(UserLoginModel userLoginModel)
         {
             _userlogin.Register(userLoginModel);
+            return RedirectToAction("Login");
+        }
+        public async Task<IActionResult> logOut()
+        {
+           /* if (HttpContext.Request.Cookies.Count > 0)
+            {
+                var siteCookies = HttpContext.Request.Cookies.Where(c => c.Key.Contains(".AspNetCore.") || c.Key.Contains("Microsoft.Authentication"));
+                foreach (var cookie in siteCookies)
+                {
+                    Response.Cookies.Delete(cookie.Key);
+                }
+            }*/
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            HttpContext.Session.Clear();
             return RedirectToAction("Login");
         }
     }
