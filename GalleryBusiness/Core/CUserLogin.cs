@@ -82,16 +82,15 @@ namespace GalleryBusiness.Core
             return profile;
         }
 
-
         public bool SetProfile(ProfilViewModel profilViewModel)
         {
             var updatedULogin = gc.UserLogins.Where(i => i.Username == profilViewModel.UName).Select(c => c).FirstOrDefault();
             updatedULogin.Username = profilViewModel.UName;
             var UpdatedUInfo = gc.UserInformations.Where(i => i.Uid == updatedULogin.LoginId).Select(c => c).FirstOrDefault();
             UpdatedUInfo.Uage = profilViewModel.Uage;
-            UpdatedUInfo.Umail= profilViewModel.Umail;
-            UpdatedUInfo.Uname= profilViewModel.Name;
-            UpdatedUInfo.Uprofession= profilViewModel.Uprofession;
+            UpdatedUInfo.Umail = profilViewModel.Umail;
+            UpdatedUInfo.Uname = profilViewModel.Name;
+            UpdatedUInfo.Uprofession = profilViewModel.Uprofession;
 
             UpdatedUInfo.UserLogin = updatedULogin;
             gc.UserInformations.Update(UpdatedUInfo);

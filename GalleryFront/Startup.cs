@@ -12,6 +12,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using FluentValidation.AspNetCore;
+using Gallery.ViewModels;
+using FluentValidation;
+using Gallery.ViewModels.Validators;
 
 namespace GalleryFront
 {
@@ -29,8 +33,13 @@ namespace GalleryFront
         {
             services.AddSession();
             services.AddMemoryCache();
-           // services.AddDistributedMemoryCache(); 
-            services.AddControllersWithViews();
+            // services.AddDistributedMemoryCache(); 
+
+
+            services.AddControllersWithViews().AddFluentValidation();
+            services.AddTransient<IValidator<ProfilViewModel>, ProfilViewModelValidator>();
+
+
             services.AddScoped<IArtist, CArtist>();
             services.AddScoped<IArtWork, CArtWork>();
             services.AddScoped<IGroup, CGroup>();

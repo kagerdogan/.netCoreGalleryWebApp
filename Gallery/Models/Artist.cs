@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
@@ -14,6 +15,7 @@ namespace Gallery.Models
         }
 
         public int Aid { get; set; }
+
         public string Aname { get; set; }
         public DateTime? Aborn { get; set; }
         public DateTime? Adied { get; set; }

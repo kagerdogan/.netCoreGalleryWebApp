@@ -31,7 +31,7 @@ namespace GalleryFront.Controllers
             _group = group;
             _userlogin = userlogin;
         }
-        public IActionResult Index()
+        public ViewResult Index()
         {
             TempData["Username"] = HttpContext.Session.GetString("currentUser");
             string userName = TempData["Username"] as string;
@@ -43,9 +43,14 @@ namespace GalleryFront.Controllers
 
            }*/
         [HttpPost]
-        public void SubmitForm(Artist artist)
+        public IActionResult SubmitForm(Artist artist)
         {
-            _artist.AddArtist(artist);
+            if (ModelState.IsValid)
+                return View(_artist.AddArtist(artist));
+            else
+            {
+                return View(artist);
+            }
         }
         public IActionResult GroupList()
         {
@@ -130,10 +135,17 @@ namespace GalleryFront.Controllers
             return View(_userlogin.GetProfileInfo(loggedInUserName));
         }
         [HttpPost]
-        public IActionResult EditPro(ProfilViewModel profilViewModel)
+        public IActionResult EditProfile(ProfilViewModel profilViewModel)
         {
-            _userlogin.SetProfile(profilViewModel);
+            if (!ModelState.IsValid)
+            {
+                return View(profilViewModel);
+            }
+            else
+            {
+                _userlogin.SetProfile(profilViewModel);
                 return RedirectToAction("Index");
+            }
         }
         public IActionResult ChangePassword()
         {
@@ -144,17 +156,17 @@ namespace GalleryFront.Controllers
         {
             var loggedInUser = HttpContext.User;
             var loggedInUserName = loggedInUser.Identity.Name; // This is our username we set earlier in the claims. 
-           // var loggedInPassword = loggedInUser.Identity.;
+                                                               // var loggedInPassword = loggedInUser.Identity.;
             var loggedInPassword = loggedInUser.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Hash).Value; //Another way to get the name or any other claim we set.
             if (Sha256.ComputeSha256Hash(passwordVM.oldPassword) == loggedInPassword)
             {
                 _userlogin.updatePassword(loggedInUserName, passwordVM.newPassword);
                 return RedirectToAction("EditProfile");
             }
-            else 
-            return View();
+            else
+                return View();
 
-            
+
         }
 
 
