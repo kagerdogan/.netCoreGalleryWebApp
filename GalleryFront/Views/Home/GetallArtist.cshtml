@@ -31,7 +31,7 @@
         <tbody>
             @foreach (var el in Model)
             {
-            <tr>
+            <tr id="@el.Aid">
                 <td id="Aid">
                     @el.Aid
                 </td>
@@ -64,12 +64,14 @@
         window.location.href = url;
     }
     function DeleteArtist(id) {
+        var object = document.getElementById(id)
         $.ajax({
             type: 'POST',
-            url: '/Home/DeleteArtist',
+            url: '/Home/DeleteArtist/',
             data: { id: id },
             success: function (result) {
                 console.log("Başarılı")
+                object.remove()
         },
             error: function (ex) {
                 console.log("İşlem Başarısız")

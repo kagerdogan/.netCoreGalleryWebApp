@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Authentication;
 using FluentValidation.AspNetCore;
 using Gallery.ViewModels;
 using FluentValidation;
-using Gallery.ViewModels.Validators;
+using Gallery.Validators;
 
 namespace GalleryFront
 {
@@ -38,6 +38,8 @@ namespace GalleryFront
 
             services.AddControllersWithViews().AddFluentValidation();
             services.AddTransient<IValidator<ProfilViewModel>, ProfilViewModelValidator>();
+            services.AddTransient<IValidator<LoginModel>, LoginModelValidator>();
+            services.AddTransient<IValidator<UserLoginModel>, UserLoginModelValidator>();
 
 
             services.AddScoped<IArtist, CArtist>();

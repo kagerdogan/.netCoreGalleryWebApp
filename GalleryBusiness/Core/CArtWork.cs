@@ -80,6 +80,7 @@ namespace GalleryBusiness.Core
             gc.ArtWorks.Remove(deleted);
             gc.SaveChanges();
             return true;
+
         }
         public List<ArtWork> ArtworkNameView()
         {

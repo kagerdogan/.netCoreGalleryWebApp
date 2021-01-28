@@ -44,7 +44,8 @@ namespace GalleryBusiness.Core
         }
         public bool DeleteArtist(int id)
         {
-            var deleted = gc.Artists.FirstOrDefault(c => c.Aid == id);
+            var deleted = gc.Artists.Where(c => c.Aid == id)
+                .Select(c => c).FirstOrDefault();
             gc.Artists.Remove(deleted);
             gc.SaveChanges();
             return true;

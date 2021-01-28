@@ -1,9 +1,10 @@
 ﻿using FluentValidation;
+using Gallery.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Gallery.ViewModels.Validators
+namespace Gallery.Validators
 {
     public class ProfilViewModelValidator:AbstractValidator<ProfilViewModel>
     {
